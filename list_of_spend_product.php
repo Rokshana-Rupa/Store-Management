@@ -19,13 +19,31 @@ while ($data1 = mysqli_fetch_assoc($query1)) {
 
 <head>
     <title>list of spend product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 </head>
 
 <body>
-    <?php
+<div class="container bg-light">
+            <div class="container_foulid border-bottom border-success">
+                <!-- topbar -->
+                <?php include('topbar.php'); ?>
+            </div>
+            <!-- end of top bar -->
+            <div class="container-foulid">
+                <div class="row">
+                    <div class="col-sm-3 bg-light p-0 m-0">
+                        <!-- left bar -->
+                        <?php include('leftbar.php'); ?>
+                    </div>
+                    <!--end of left bar-->
+                    <div class="col-sm-9 border start border-success">
+                        <!--right bar-->
+                        <div class="container p-4 m-4">
+                        <?php
     $sql = "SELECT * FROM spend_product";
     $query = $conn->query($sql);
-    echo "<table border='1'><tr><th>Product Name</th><th>Quantity</th><th>Entry Date</th><th>Action</th></tr>";
+    echo "<table <table class='table table-success table-striped table-hover'><tr><th>Product Name</th><th>Quantity</th><th>Entry Date</th><th>Action</th></tr>";
     while ($data = mysqli_fetch_assoc($query)) {
         $spend_product_id = $data['spend_product_id'];
         $spend_product_name = $data['spend_product_name'];
@@ -44,6 +62,21 @@ while ($data1 = mysqli_fetch_assoc($query1)) {
     echo "</table>";
 
     ?>
+                        </div>
+                        <!--end of container-->
+
+                    </div>
+                    <!--end of right bar-->
+                </div>
+                <!-- end of row -->
+            </div>
+            <!-- end of container -->
+            <div class="container_foulid">
+
+            </div>
+        </div>
+        
+    
 
 </body>
 
