@@ -17,9 +17,23 @@ if (!empty($_SESSION['user_first_name']) && !empty($_SESSION['user_last_name']))
 <html>
 <head>
     <title>Add users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    
 </head>
 <body>
-    <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="GET">
+<div class="container bg-light">
+    <div class="container_foulid border-bottom border-success">
+        <!-- topbar -->
+        <?php include('topbar.php');?>
+    </div><!-- end of top bar -->
+    <div class="container-foulid">
+        <div class="row">
+            <div class="col-sm-3 bg-light p-0 m-0"><!-- left bar -->
+                <?php include('leftbar.php');?>   
+            </div><!--end of left bar-->
+            <div class="col-sm-9 border start border-success"><!--right bar-->
+            <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="GET">
         select product name:
         <select name="product_name">
             <?php
@@ -34,7 +48,7 @@ if (!empty($_SESSION['user_first_name']) && !empty($_SESSION['user_last_name']))
             }
             ?>
         </select>
-        <input type="submit" value="Generate Report">
+        <input type="submit" value="Generate Report" class="btn btn-success">
     </form>
     <h1>store product</h1>
     <?php
@@ -47,7 +61,7 @@ if (!empty($_SESSION['user_first_name']) && !empty($_SESSION['user_last_name']))
             $store_product_name = $data1['store_product_name'];
             $store_product_entry_date = $data1['store_product_entry_date'];
             echo "<h2>" . $data_list[$store_product_name] . "</h2>";
-            echo "<table border='1'><tr><td>Store Date</td><td>Amount<td></tr>";
+            echo "<table <table class='table table-success table-striped table-hover'><tr><td>Store Date</td><td>Amount<td></tr>";
             echo "<tr><td>$store_product_entry_date</td><td>$store_product_quent<td></tr>";
             echo "</table>";
         }
@@ -64,12 +78,21 @@ if (!empty($_SESSION['user_first_name']) && !empty($_SESSION['user_last_name']))
             $spend_product_name = $data4['spend_product_name'];
             $spend_product_entry_date = $data4['spend_product_entry_date'];
             echo "<h2>" . $data_list[$spend_product_name] . "</h2>";
-            echo "<table border='1'><tr><td>Spend Date</td><td>Amount<td></tr>";
+            echo "<table <table class='table table-success table-striped table-hover'><tr><td>Spend Date</td><td>Amount<td></tr>";
             echo "<tr><td>$spend_product_entry_date</td><td>$spend_product_quent<td></tr>";
             echo "</table>";
         }
     }
     ?>
+                </div><!--end of container-->
+            </div><!--end of right bar-->
+        </div><!-- end of left bar-->
+    </div>
+    <div class="container_foulid">
+        <?php include('bottombar.php');?> 
+    </div>
+</div><!--@end of container-->
+    
 </body>
 </html>
 <?php

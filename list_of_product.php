@@ -48,6 +48,7 @@ if (!empty($_SESSION['user_first_name']) && !empty($_SESSION['user_last_name']))
                                 $product_name = $data['product_name'];
                                 $product_category = $data['product_category'];
                                 $product_code = $data['product_code'];
+                                $product_entry_date = $data['product_entry_date'];
 
                                 echo "<tr>
                                         <td>$product_name</td>

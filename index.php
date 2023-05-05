@@ -88,6 +88,18 @@ if(!empty($_SESSION['user_first_name']) && !empty($_SESSION['user_last_name'])) 
 </div><!--end of right bar-->
 </div><!-- end of left bar-->
 </div>
+<hr/>
+<div class="row p-4">
+<div class="col-sm-3">
+<a href="calculating_spend_product.php"><i class="fas fa-chart-bar fa-5x text-success"></i></a>
+<p>Calculate Spend Product</p>
+</div>
+<div class="col-sm-3">
+</div>
+<div class="col-sm-3">
+</div>
+<div class="col-sm-3">
+</div>
 <div class="container_foulid">
 <?php include('bottombar.php');?> 
 </div>

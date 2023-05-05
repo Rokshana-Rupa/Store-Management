@@ -33,19 +33,119 @@ if(isset($_POST['user_email']) && isset($_POST['user_password'])){
     }
 }
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Login</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>sTore management System</title>
+ 	
+
+
+
+
 </head>
+<style>
+	body{
+		width: 100%;
+	    height: calc(100%);
+	    /*background: #007bff;*/
+	}
+	main#main{
+		width:100%;
+		height: calc(100%);
+		background:white;
+	}
+	#login-right{
+		position: absolute;
+		right:0;
+		width:40%;
+		height: calc(100%);
+		background:white;
+		display: flex;
+		align-items: center;
+	}
+	#login-left{
+		position: absolute;
+		left:0;
+		width:60%;
+		height: calc(100%);
+		background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url(./images/download2.png);
+  background-size: contain;
+		display: flex;
+		align-items: center;
+	}
+	#login-right .card{
+		margin: auto
+	}
+	.logo {
+    margin: auto;
+    font-size: 8rem;
+    background: #D3D3D3;
+    padding: .5em 0.8em;
+    border-radius: 50% 50%;
+    color: #484848;
+}
+</style>
+
 <body>
-    <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="POST">
+
+
+  <main id="main" class=" bg-dark">
+  		<div id="login-left">
+  			<div class="logo">
+  				<span class="fa fa-coins"></span>
+  			</div>
+  		</div>
+  		<div id="login-right">
+  			<div class="card col-md-8">
+  				<div class="card-body">
+                  <form action="<?php echo $_SERVER ['PHP_SELF'];?>" method="POST">
         User's Email:<br>
         <input type="email" name="user_email"><br><br>
         User's Password:<br>
         <input type="password" name="user_password"><br><br>
         <input type="submit" value="submit">
     </form>
+  				</div>
+  			</div>
+  		</div>
+   
+
+  </main>
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+
 </body>
+<script>
+	$('#login-form').submit(function(e){
+		e.preventDefault()
+		$('#login-form button[type="button"]').attr('disabled',true).html('Logging in...');
+		if($(this).find('.alert-danger').length > 0 )
+			$(this).find('.alert-danger').remove();
+		$.ajax({
+			url:'ajax.php?action=login',
+			method:'POST',
+			data:$(this).serialize(),
+			error:err=>{
+				console.log(err)
+		$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
+
+			},
+			success:function(resp){
+				if(resp == 1){
+					location.href ='index.php?page=home';
+				}else if(resp == 2){
+					location.href ='voting.php';
+				}else{
+					$('#login-form').prepend('<div class="alert alert-danger">Username or password is incorrect.</div>')
+					$('#login-form button[type="button"]').removeAttr('disabled').html('Login');
+				}
+			}
+		})
+	})
+</script>	
 </html>

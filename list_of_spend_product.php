@@ -1,17 +1,18 @@
 <?php
 require('connection.php');
 session_start();
-if(!empty($_SESSION['user_first_name']) && !empty($_SESSION['user_last_name'])) {
-    $user_first_name= $_SESSION['user_first_name'];
-   $user_first_name=$_SESSION['user_last_name'];
-$sql1 = "SELECT * FROM product";
-$query1 = $conn->query($sql1);
-$data_list = array();
-while ($data1 = mysqli_fetch_assoc($query1)) {
-    $product_id = $data1['product_id'];
-    $product_name = $data1['product_name'];
-    $data_list[$product_id] = $product_name;
-}
+if (!empty($_SESSION['user_first_name']) && !empty($_SESSION['user_last_name'])) {
+    $user_first_name = $_SESSION['user_first_name'];
+    $user_last_name = $_SESSION['user_last_name'];
+    $sql1 = "SELECT * FROM product";
+    $query1 = $conn->query($sql1);
+    $data_list = array();
+    while ($data1 = mysqli_fetch_assoc($query1)) {
+        $product_id = $data1['product_id'];
+        $product_name = $data1['product_name'];
+        $data_list[$product_id] = $product_name;
+    }
+
 
 ?>
 <!DOCTYPE html>
@@ -55,7 +56,7 @@ while ($data1 = mysqli_fetch_assoc($query1)) {
         <td>" . $data_list[$spend_product_name] . "</td>
         <td>$spend_product_quent</td>
         <td>$spend_product_entry_date</td>
-       <td><a href='edit_spend_product.php?id=$spend_product_id'>Edit</a>
+       <td><a href='edit_spend_product.php?id=$spend_product_id'class='btn btn-success'>Edit</a>
        </td>
 </tr>";
     }
