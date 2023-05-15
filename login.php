@@ -72,7 +72,7 @@ if(isset($_POST['user_email']) && isset($_POST['user_password'])){
 		left:0;
 		width:60%;
 		height: calc(100%);
-		background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url(./images/download2.png);
+		background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url(./images/store.jpg);
   background-size: contain;
 		display: flex;
 		align-items: center;
@@ -80,14 +80,7 @@ if(isset($_POST['user_email']) && isset($_POST['user_password'])){
 	#login-right .card{
 		margin: auto
 	}
-	.logo {
-    margin: auto;
-    font-size: 8rem;
-    background: #D3D3D3;
-    padding: .5em 0.8em;
-    border-radius: 50% 50%;
-    color: #484848;
-}
+	
 </style>
 
 <body>

@@ -21,33 +21,36 @@ if(!empty($_SESSION['user_first_name']) && !empty($_SESSION['user_last_name'])) 
             <div class="row">
                 <div class="col-sm-3 bg-light p-0 m-0"><!-- left bar -->
                 <?php include('leftbar.php');?>   
-</div><!--end of left bar-->
-<div class="col-sm-9 border start border-success"><!--right bar-->
-<div class="row p-4">
-<div class="col-sm-3">
-<a href="add_category.php"><i class="fas fa-folder-plus fa-5x text-success"></i></a>
-<p>Add category</p>
-</div>
-<div class="col-sm-3">
-<a href="list_of_category.php"><i class="fas fa-folder-plus fa-5x text-success"></i></a>
-<p>list of category</p>
-</div>
-<div class="col-sm-3">
-<a href="add_product.php"><i class="fas fa-box-open fa-5x text-success"></i></a>
-<p>Add Product</p>
-</div>
-<div class="col-sm-3">
-<a href="list_of_product.php"><i class="fas fa-stream fa-5x text-success"></i></a>
-<p>Product list</p>
-</div>
-<hr/>
-<div class="row p-4">
-<div class="col-sm-3">
-<a href="add_store_product.php"><i class="fas fa-trash-restore fa-5x text-success"></i></a>
-<p>Store Product</p>
-</div>
-<div class="col-sm-3">
-<a href="list_of_entry_product.php"><i class="fas fa-folder-plus fa-5x text-success"></i></a>
+                </div><!--end of left bar-->
+                <div class="col-sm-9 border start border-success"><!--right bar-->
+                    <div class="row p-4">
+                        <div class="col-sm-3">
+                            <a href="add_category.php"><i class="fas fa-folder-plus fa-5x text-success"></i></a>
+                            <p>Add category</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="list_of_category.php"><i class="fas fa-folder-plus fa-5x text-success"></i></a>
+                            <p>list of category</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="add_product.php"><i class="fas fa-box-open fa-5x text-success"></i></a>
+                            <p>Add Product</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="list_of_product.php"><i class="fas fa-stream fa-5x text-success"></i></a>
+                            <p>Product list</p>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row p-4">
+                        <div class="col-sm-3">
+                            <a href="add_store_product.php"><i class="fas fa-trash-restore fa-5x text-success"></i></a>
+                            <p>Store Product</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <a href="list_of_entry_product.php"><i class="fas fa-folder-plus fa-5x text-success"></i></a>
+
+
 <p>Store Product List</p>
 </div>
 <div class="col-sm-3">

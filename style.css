@@ -6,7 +6,7 @@
 .banner {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url(./images/store.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),url(./images/store3.png);
   background-size: contain;
   background-position: center;
 }
